@@ -1,0 +1,45 @@
+<div class="container">
+
+
+    <!--showmessage alert for delete-->
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{successmsg}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <br><br>
+    <div align="center">
+      <img  src="/assets/books.png" style="height: 100px;">
+      <h2>Book List</h2>
+  <br><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <td class="column-name" align= "center" scope="col">NO.</td>
+          <td class="column-name" align= "center" scope="col">BOOK TITLE</td>
+          <td class="column-name" align= "center" scope="col">BOOK AUTHOR</td>
+          <td class="column-name" align= "center" scope="col">BOOK STATUS</td>
+  
+          <td scope="col"></td>
+          <td scope="col"></td>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let us of listData'>
+            <td align= "center"scope="row">{{us.bookId}}</td>
+            <td align="center" scope="row">{{ us.bookTitle }}</td>
+            <td align="center">{{ us.bookAuthor }}</td>
+            <td align="center">{{ us.bookStatus }}</td>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary" (click)="deleteBook(us.bookId)">REMOVE</button>
+                &nbsp;
+                <button type="submit" class="btn btn-primary" [routerLink]="['/bookUpdate', us.bookId]">EDIT</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    <button  type="submit" class="btn btn-primary" [routerLink]="['/bookAdd']">ADD NEW BOOK</button>
+
+    </div>
+    </div>

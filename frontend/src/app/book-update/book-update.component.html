@@ -1,0 +1,61 @@
+<div id="outPopUp" class="">
+    <div class="">
+  
+        <!--to show error alert-->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+          <!--to show success alert-->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{successmsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          <br><br>
+          
+          <div align="center">
+            <img  src="/assets/addstudent.png" style="height: 100px;">
+
+          <br><br>
+
+        <form  [formGroup]="bookForm" >
+
+          <div class="col-lg-4 mx-auto" >
+            <input type="text" class="form-control" formControlName="bookId" placeholder="Book ID" readonly>
+          </div>
+
+          <br>
+
+          <div class="col-lg-4 mx-auto" >
+            <input type="text" class="form-control" formControlName="bookTitle" placeholder="Book Title">
+          </div>
+
+          <br>
+
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control" formControlName="bookAuthor" placeholder="Book Author">
+          </div>
+
+          <br>
+
+          <div class="col-lg-4 mx-auto">
+            <select class="form-control" formControlName="bookStatus">
+              <option value="" disabled selected>Book Status</option>
+              <option value="Available">Available</option>
+              <option value="Not Available">Not Available</option>
+            </select>
+          </div>
+        
+          <br>
+          <br>
+  
+          <div  align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="bookUpdate()">
+            <button  type="submit" class="btn btn-primary" >Update</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  

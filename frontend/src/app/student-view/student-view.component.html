@@ -1,0 +1,59 @@
+<div class="container">
+
+
+    <!--showmessage alert for delete-->
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{successmsg}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <br><br>
+    <div align="center">
+      <img  src="/assets/addstudent.png" style="height: 100px;">
+      <h2>Student List</h2>
+  <br><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <td class="column-name" align= "center" scope="col">NO.</td>
+          <td class="column-name" align= "center" scope="col">STUDENT NAME</td>
+          <td class="column-name" align= "center" scope="col">STUDENT ID</td>
+          <td class="column-name" align= "center" scope="col">BOOK TITLE</td>
+          <td class="column-name" align= "center" scope="col">BORROW DATE</td>
+          <td class="column-name" align= "center" scope="col">RETURN DATE</td>
+          <td class="column-name" align= "center" scope="col">TIME REMAINING</td>
+  
+          <td scope="col"></td>
+          <td scope="col"></td>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = 'let us of listData'>
+          <td align= "center"scope="row">{{us.Id}}</td>
+          <td align= "center">{{us.studentName}}</td>
+          <td align= "center">{{us.studentID}}</td>
+          <td align= "center">{{us.bookTitle}}</td>
+          <td align= "center">{{us.borrowDate}}</td>
+          <td align= "center">{{us.returnDate}}</td>
+          <td align= "center">{{us.timeLeft?.days}} days, {{us.timeLeft?.hours}} hours</td>
+  
+          <td></td>
+          <td>
+  
+            <button type="submit" class="btn btn-primary" (click)="deleteStudent(us.Id)">DELETE</button>
+            &nbsp;
+            <button type="submit" class="btn btn-primary" [routerLink]="['/studentUpdate', us.Id]">EDIT</button>
+          </td>
+        </tr>
+  
+      </tbody>
+    </table>
+    <button  type="submit" class="btn btn-primary" [routerLink]="['/studentAdd']">ADD NEW STUDENT</button>
+  
+  </div>
+  </div>
+  
+  
+ 
+  
+  

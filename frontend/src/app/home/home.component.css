@@ -1,0 +1,28 @@
+.container {
+    display: block;
+    margin-top: 50px; /* Adjust this value as needed */
+    border-radius: 15px; /* Adjust this value as needed */
+}
+.student-data, .book-data {
+    border: 2px solid #000;
+    padding: 20px;
+    width: 95%;
+    margin-bottom: 20px; /* Adjust this value as needed */
+    border-radius: 15px; /* Adjust this value as needed */
+}
+
+h1,h5 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.column-name {
+    font-weight: 500;
+}
+
+html {
+    background-image: url('/assets/library3.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

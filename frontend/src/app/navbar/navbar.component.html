@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/home']" routerLinkActive="router-link-active">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/studentView']" routerLinkActive="router-link-active">Manage Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/bookView']" routerLinkActive="router-link-active">Manage Book</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/aboutus']" routerLinkActive="router-link-active">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/faq']" routerLinkActive="router-link-active">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

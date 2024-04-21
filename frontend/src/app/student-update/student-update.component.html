@@ -1,0 +1,66 @@
+<div id="outPopUp" class="">
+  <div class="">
+
+      <!--to show error alert-->
+      <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{errormsg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+        <!--to show success alert-->
+        <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>{{successmsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+<br><br>
+        <div align="center">
+          <img  src="/assets/addstudent.png" style="height: 100px;">
+          <br><br>
+      <form  [formGroup]="studentForm" >
+
+        <div class="col-lg-4 mx-auto" >
+          <input type="display" class="form-control" formControlName="Id" placeholder="ID"  readonly>
+        </div>
+        <br>
+
+        <div class="col-lg-4 mx-auto">
+          <input type="text" class="form-control" formControlName="studentName" placeholder="Student Name">
+        </div>
+        <br>
+
+        <div class="col-lg-4 mx-auto" >
+          <input type="text" class="form-control" formControlName="studentID" placeholder="Student ID">
+        </div>
+        <br>
+
+        <div class="col-lg-4 mx-auto">
+          <select class="form-control" formControlName="bookTitle">
+            <option value="" disabled selected>Book Title</option>
+            <option [value]="title.bookTitle" *ngFor="let title of bookTitle">
+              {{title.bookTitle}}
+            </option>
+          </select>
+        </div>
+
+        <br>
+
+        <div class="col-lg-4 mx-auto">
+          <input type="date" class="form-control" formControlName="borrowDate" placeholder="Borrow Date">
+        </div>
+        <br>
+
+        <div class="col-lg-4 mx-auto">
+          <input type="date" class="form-control" formControlName="returnDate" placeholder="Returned Date">
+        </div>
+      
+        <br>
+        <br>
+
+        <div  align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="studentUpdate()">
+          <button  type="button" class="btn btn-primary">Update</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
